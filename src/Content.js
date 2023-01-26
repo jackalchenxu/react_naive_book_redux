@@ -2,12 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import ThemeSwitch from "./ThemeSwitch";
 import connect from "./Connect";
-
-const mapStateToProps = (state) => {
-  return {
-    themeColor: state.themeColor,
-  };
-};
+import { mapStateToProps, mapDispatchToProps } from "./MapToProps";
 
 class Content extends React.Component {
   static propTypes = {

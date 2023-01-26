@@ -1,12 +1,7 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import connect from "./Connect";
-
-const mapStateToProps = (state) => {
-  return {
-    themeColor: state.themeColor,
-  };
-};
+import { mapStateToProps, mapDispatchToProps } from "./MapToProps";
 
 class Header extends React.Component {
   static propTypes = {

@@ -1,17 +1,17 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import connect from "./Connect";
+import { mapDispatchToProps } from "./MapToProps";
 
 class ThemeSwitch extends React.Component {
-  static contextTypes = {
-    store: PropTypes.object,
+  static propTypes = {
+    setThemeColor: PropTypes.func,
   };
 
   handleSwitchColor(color) {
-    const { store } = this.context;
-    store.dispatch({
-      type: "CHANGE_THEME",
-      themeColor: color,
-    });
+    if (this.props.setThemeColor) {
+      this.props.setThemeColor(color);
+    }
   }
 
   render() {
@@ -26,4 +26,5 @@ class ThemeSwitch extends React.Component {
   }
 }
 
+ThemeSwitch = connect(null, mapDispatchToProps)(ThemeSwitch);
 export default ThemeSwitch;

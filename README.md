@@ -15,3 +15,7 @@ This project is to demo React.js Redux design and evolution.
 
 - remove `context/store` from `ThemeSwitch` and fix refresh issue
 - introduce `mapDispatchToProps`
+
+4th version
+
+- introduce `provider` to remove `store` from index

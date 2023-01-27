@@ -4,17 +4,9 @@ import reportWebVitals from "./reportWebVitals";
 import Header from "./Header";
 import Content from "./Content";
 import { createStore, themeReducer } from "./Store";
-import { PropTypes } from "prop-types";
+import { Provider } from "./react-redux";
 
 class Index extends React.Component {
-  static childContextTypes = {
-    store: PropTypes.object,
-  };
-
-  getChildContext() {
-    return { store };
-  }
-
   render() {
     return (
       <div>
@@ -30,7 +22,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div>
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     </div>
   </React.StrictMode>
 );

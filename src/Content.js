@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import ThemeSwitch from "./ThemeSwitch";
 import connect from "./Connect";
-import { mapStateToProps, mapDispatchToProps } from "./MapToProps";
+import { mapStateToProps } from "./MapToProps";
 
 class Content extends React.Component {
   static propTypes = {

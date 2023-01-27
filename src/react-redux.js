@@ -33,4 +33,22 @@ const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponent) => {
   return Connect;
 };
 
-export default connect;
+class Provider extends React.Component {
+  static propTypes = {
+    store: PropTypes.object.isRequired,
+  };
+
+  static childContextTypes = {
+    store: PropTypes.object,
+  };
+
+  getChildContext() {
+    return { store: this.props.store };
+  }
+
+  render() {
+    return <div>{this.props.children}</div>;
+  }
+}
+
+export { connect, Provider };

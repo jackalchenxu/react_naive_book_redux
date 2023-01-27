@@ -16,6 +16,7 @@ const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponent) => {
     componentDidMount() {
       const { store } = this.context;
       this._updateProps();
+      //bug: store.subscribe(()=>this._updateProps);
       store.subscribe(() => {
         this._updateProps();
       });
